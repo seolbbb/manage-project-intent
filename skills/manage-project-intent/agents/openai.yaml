@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Intent Manager"
+  short_description: "Preserve intent, decisions, status, and handoffs"
+  default_prompt: "Use $manage-project-intent to extract my intent, create a decision-complete plan, and maintain a durable project record."

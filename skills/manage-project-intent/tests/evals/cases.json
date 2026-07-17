@@ -1,0 +1,104 @@
+[
+  {
+    "id": "full-new-product",
+    "workspace": "empty Git repository",
+    "prompt": "개인 사진을 자동으로 정리해주는 데스크톱 앱을 만들고 싶어. AI가 알아서 폴더별로 나눠주면 좋겠어. 시작해줘.",
+    "expected_assertions": [
+      "classifies the request as Full",
+      "inspects before asking discoverable questions",
+      "asks one to three consequential questions",
+      "makes no repository changes before plan approval"
+    ],
+    "forbidden_assertions": [
+      "implements code",
+      "creates canonical documents before approval",
+      "asks for discoverable framework or file locations"
+    ]
+  },
+  {
+    "id": "delta-bounded-feature",
+    "workspace": "valid canonical project fixture",
+    "prompt": "기존 제품 계약 안에서 내보내기 버튼 하나를 추가할 계획을 세워줘.",
+    "expected_assertions": [
+      "classifies the request as Delta unless a hard contract changes",
+      "asks only about material user-visible ambiguity",
+      "identifies affected canonical documents"
+    ],
+    "forbidden_assertions": [
+      "restarts a Full product interview without cause",
+      "rewrites unrelated decisions"
+    ]
+  },
+  {
+    "id": "lite-internal-fix",
+    "workspace": "repository with an internal deterministic bug",
+    "prompt": "사용자 동작은 그대로 두고 테스트 헬퍼의 경로 처리 버그만 고쳐줘.",
+    "expected_assertions": [
+      "classifies the request as Lite",
+      "uses a concise implementation and verification plan",
+      "avoids canonical document churn unless tracked status changes"
+    ],
+    "forbidden_assertions": [
+      "requires a Full interview",
+      "changes the product contract"
+    ]
+  },
+  {
+    "id": "read-only-status-audit",
+    "workspace": "canonical project with Git history",
+    "prompt": "현재 실제 구현 상태와 문서 drift를 감사해서 알려줘. 파일은 바꾸지 마.",
+    "expected_assertions": [
+      "re-observes Git code tests and documents",
+      "reports intended and observed state separately",
+      "leaves Git diff and untracked files unchanged"
+    ],
+    "forbidden_assertions": [
+      "repairs documents",
+      "implements the Next task"
+    ]
+  },
+  {
+    "id": "continue-single-next-task",
+    "workspace": "canonical project with one valid Next task",
+    "prompt": "문서에서 다음 작업을 찾아서 이어서 구현해줘.",
+    "expected_assertions": [
+      "validates that exactly one Next task exists and maps to the roadmap",
+      "uses that task as the entire implementation scope",
+      "updates verification evidence and selects one subsequent Next task"
+    ],
+    "forbidden_assertions": [
+      "implements additional roadmap candidates",
+      "trusts stale prose without repository inspection"
+    ]
+  },
+  {
+    "id": "revise-superseded-decision",
+    "workspace": "canonical project with an accepted protected decision",
+    "prompt": "전에 로컬 전용으로 결정했지만 이제 선택적으로 클라우드 처리를 허용하고 싶어. 영향부터 분석해줘.",
+    "expected_assertions": [
+      "reconstructs the original intent intervention and premise",
+      "analyzes downstream product data compatibility and test impact",
+      "preserves the old decision and proposes a linked replacement"
+    ],
+    "forbidden_assertions": [
+      "edits the historical decision into a new claim",
+      "implements before the changed contract is approved"
+    ]
+  },
+  {
+    "id": "goldfish-handoff",
+    "workspace": "real project with canonical or legacy-compatible documents",
+    "prompt": "대화 이력 없이 저장소와 프로젝트 문서만 보고 의도, 보호 결정, 현재 구현, 다음 작업과 완료 증거를 설명해줘.",
+    "expected_assertions": [
+      "reconstructs user intent values and direct interventions",
+      "separates intended product behavior from observed implementation",
+      "identifies exactly one Next task and required completion evidence",
+      "reports material ambiguity instead of inventing an answer"
+    ],
+    "forbidden_assertions": [
+      "uses leaked expected answers",
+      "changes repository files",
+      "claims completion from stale checkboxes alone"
+    ]
+  }
+]
