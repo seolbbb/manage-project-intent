@@ -4,9 +4,9 @@
 
 - Last verified: 2026-07-18
 - Working language: Korean
-- Current phase: PHASE-003
-- State: active
-- Repository state: Git source contains the canonical project record, `manage-project-intent`, installer, and tests; the approved public upload is in progress and GitHub has not yet been created.
+- Current phase: PHASE-002
+- State: planning
+- Repository state: `https://github.com/seolbbb/manage-project-intent` is public on `main`; re-observe Git, public access, and installed Skills on every resume.
 
 ## Implemented
 
@@ -17,10 +17,12 @@
 - 설치 도구는 원본과 전역 설치본을 비교하고 기본 dry-run과 명시적 apply를 제공한다.
 - 행동 평가 7개가 Full, Delta, Lite, status/audit, continue, revise, Goldfish 계약을 명시한다.
 - 새 전역 `manage-project-intent` 설치와 경로 없는 Skill 발견이 검증됐다.
+- 영문·한국어 README가 개발 의도, 기대효과와 한계, 네 문서, 등급, 설치·사용법, Goldfish와 Spec Kit 경계를 설명한다.
+- MIT 라이선스와 공개 GitHub `main` 설치 경로가 제공된다.
 
 ## In progress
 
-- TASK-007: 공개 README와 MIT 라이선스를 추가하고 Skill을 GitHub `main`에 게시한다.
+- None. PHASE-003 is complete; PHASE-002 extraction work has not started.
 
 ## Verification evidence
 
@@ -37,10 +39,15 @@
 - Installation: repository and installed manifests matched; `manage-project-intent` exists and `manage-project-specs` no longer exists.
 - Final self-validation: source and installed package checks passed; project validator passed with errors=0 and warnings=0; installer dry-run reported UP-TO-DATE; source contained zero Python bytecode artifacts.
 - Final prior safety check: the real-world backtest target remained clean and the temporary forward-test repository was removed.
+- Public documentation: a fresh agent using only the two READMEs reconstructed the purpose, developer intent, benefits, limitations, installation, invocation, document contract, work levels, non-triggers, and Spec Kit boundary; its first-use ambiguities were addressed before publication.
+- Public upload: `https://github.com/seolbbb/manage-project-intent` was created with `PUBLIC` visibility and `main` as the default branch.
+- Remote install: the official `skill-installer` downloaded `skills/manage-project-intent` from public `main` into an isolated temporary destination; official package validation passed and `SKILL.md` matched the pushed source by SHA-256.
+- Anonymous access: `https://raw.githubusercontent.com/seolbbb/manage-project-intent/main/README.md` returned HTTP 200 without an authorization header.
+- Public hygiene: repository-wide search found no blocked personal project name, local user path, GitHub token prefix, or OpenAI API key marker.
 
 ## Drift and gaps
 
-- Public README, license, remote repository and remote installation evidence do not exist yet.
+- None in the completed PHASE-003 scope.
 
 ## Blockers
 
@@ -48,9 +55,9 @@
 
 ## Next task
 
-- TASK-007: 특정 개인 프로젝트 정보를 제외한 `manage-project-intent` Skill을 공개 GitHub 저장소에 게시한다.
-- Acceptance: 영문·한국어 README, MIT와 공개 저장소가 존재하고 `main` 경로의 원격 설치가 통과한다.
-- Verify: 전체 로컬 검사, `rg -i` 공개 위생 검사, 비로그인 공개 접근과 원격 임시 설치 결과를 검토한다.
+- TASK-005: 두 개의 추가 실제 프로젝트에서 인터뷰와 읽기 전용 audit 경로를 사용해 `elicit-project-intent`와 `audit-project-intent`의 독립 분리 필요성을 평가한다.
+- Acceptance: 각 경로가 독립적인 사용자 trigger와 반복되는 전용 지침을 갖는지 증거를 남기고, 분리 또는 루트 유지 결론을 결정 근거와 함께 기록한다.
+- Verify: fresh-agent 결과 두 쌍을 기존 행동 평가 assertions와 비교하고, 파일 무변경 audit 증거와 질문 품질을 검토한다.
 
 ## Resume checklist
 

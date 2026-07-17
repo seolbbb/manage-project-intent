@@ -16,8 +16,8 @@
 
 ## Current phase
 
-- Phase: PHASE-003
-- Outcome: 특정 개인 프로젝트 정보를 공개하지 않고 설치 가능한 Skill을 GitHub에 배포한다.
+- Phase: PHASE-002
+- Outcome: 실제 사용 증거가 있는 workflow 단계만 독립 Skill 후보로 평가한다.
 
 ## Phases
 
@@ -39,16 +39,16 @@ Tasks:
 
 ### PHASE-003 — Publish the Skill
 
-- Status: active
+- Status: done
 - Outcome: 사용자 의도 보존 방법론과 재사용 가능한 Skill을 개인 프로젝트 정보 없이 공개한다.
 - Dependencies: PHASE-001 completion and the approved public-upload plan.
 - Entry criteria: 공개 저장소 이름, MIT 라이선스와 영문·한국어 문서 범위가 승인됐다.
 - Exit criteria: 로컬 검사가 통과하고 공개 페이지와 `main` 경로 원격 설치가 검증된다.
-- Verification evidence: Not available until the phase is done.
+- Verification evidence: English and Korean READMEs passed fresh-agent first-use review; MIT and public GitHub `main` are available; official remote installation, official package validation, source hash comparison, anonymous README access, and public hygiene checks passed on 2026-07-18.
 
 Tasks:
 
-- [ ] TASK-007: 공개 문서와 라이선스를 구현하고 `seolbbb/manage-project-intent`에 Skill을 게시한다.
+- [x] TASK-007: 공개 문서와 라이선스를 구현하고 `seolbbb/manage-project-intent`에 Skill을 게시한다.
 
 ### PHASE-002 — Extract independently valuable intent Skills
 
