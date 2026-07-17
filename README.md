@@ -26,6 +26,19 @@ The starting belief is simple: when everyone has access to similar AI tools, the
 
 The goal is not to produce more documents. The goal is to preserve enough intent and evidence that a fresh agent can continue the same project without reconstructing its purpose from old chat logs.
 
+## The core loop: keep asking until decisions are complete
+
+This is not a one-shot requirements form. For Full work, the Skill has **no preset total question count**. It asks one to three consequential questions at a time, records what each answer changes, identifies the next material gap, and repeats. It proposes a plan only when the product can be implemented without guessing about a material decision.
+
+The stopping rule is decision coverage, not conversational fatigue. Every material interview route must become one of the following:
+
+- **answered** by the user or repository evidence;
+- **deferred** with an owner and a trigger for reopening it;
+- **agent-owned** because the user explicitly delegated that choice; or
+- **not applicable**, with a reason.
+
+This is deliberate questioning, not an interrogation about every technical detail. The user decides choices that change the product outcome—UX, safety, privacy, scope, priorities, commercial terms, and unacceptable tradeoffs. The agent owns ordinary implementation mechanics. If the user says, for example, “decide deployment details yourself,” the Skill stops asking routine deployment questions and revisits that area only if it later conflicts with a protected product decision.
+
 ## What it is designed to improve
 
 - **Fewer repeated requirement questions:** consequential answers live in the repository.
@@ -41,14 +54,17 @@ These are intended operational benefits, not a guarantee of higher productivity 
 ## How it works
 
 ```mermaid
-flowchart LR
-    A["Inspect repository truth"] --> B["Elicit consequential intent"]
-    B --> C["Approve a decision-complete plan"]
-    C --> D["Materialize the project record"]
-    D --> E["Implement one bounded task"]
-    E --> F["Verify and converge status"]
-    F --> G["Fresh-context handoff check"]
-    G --> E
+flowchart TD
+    A["Inspect repository truth"] --> B["Ask 1–3 consequential questions"]
+    B --> C["Record the answer, its rationale, and what it changes"]
+    C --> D{"Any material decision still unresolved?"}
+    D -- "Yes" --> B
+    D -- "No: decision-complete" --> E["Approve the plan"]
+    E --> F["Materialize the project record"]
+    F --> G["Implement one bounded task"]
+    G --> H["Verify and converge status"]
+    H --> I["Fresh-context handoff check"]
+    I --> G
 ```
 
 ### Four canonical documents
@@ -79,7 +95,7 @@ The Korean files are the working source of truth for this repository. The Englis
 
 | Level | Use it for | Behavior |
 | --- | --- | --- |
-| **Full** | New products, multi-milestone features, architecture changes, safety/privacy/data/licensing/pricing decisions | Research, repeated intent interview, explicit plan approval, all affected documents, and fresh-context handoff validation |
+| **Full** | New products, multi-milestone features, architecture changes, safety/privacy/data/licensing/pricing decisions | Research, a decision-completion interview with 1–3 questions per round and no total-round cap, explicit plan approval, all affected documents, and fresh-context handoff validation |
 | **Delta** | A bounded user-facing feature inside an accepted product contract | Targeted questions and only the affected documents |
 | **Lite** | Internal fixes, refactors, build or tooling work | Concise planning and minimal permanent document churn |
 
@@ -159,7 +175,7 @@ When `.specify/` or `$speckit-*` Skills are present, Manage Project Intent can r
 ## Verification included in this repository
 
 - deterministic tests for bootstrap, migration safety, and validation semantics;
-- behavioral cases for Full, Delta, Lite, status/audit, continue, revise, Spec Kit boundaries, and handoff;
+- behavioral cases for the multi-round Full interview, explicit delegation boundaries, Delta, Lite, status/audit, continue, revise, Spec Kit boundaries, and handoff;
 - fresh-agent forward tests that check questions, read-only behavior, and document reconstruction;
 - an anonymized real-world project backtest;
 

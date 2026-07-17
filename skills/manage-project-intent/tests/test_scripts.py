@@ -14,6 +14,8 @@ VALIDATOR = SKILL_ROOT / "scripts" / "validate_project_docs.py"
 BOOTSTRAPPER = SKILL_ROOT / "scripts" / "bootstrap_project_docs.py"
 FIXTURES = SKILL_ROOT / "tests" / "fixtures"
 EVAL_CASES = SKILL_ROOT / "tests" / "evals" / "cases.json"
+INTERVIEW_PLAYBOOK = SKILL_ROOT / "references" / "interview-playbook.md"
+SKILL_MD = SKILL_ROOT / "SKILL.md"
 
 
 class ScriptTests(unittest.TestCase):
@@ -273,6 +275,8 @@ Tasks:
             ids,
             {
                 "full-new-product",
+                "full-decision-completion-loop",
+                "delegated-domain-boundary",
                 "delta-bounded-feature",
                 "lite-internal-fix",
                 "read-only-status-audit",
@@ -285,6 +289,21 @@ Tasks:
             self.assertTrue(case["prompt"].strip())
             self.assertTrue(case["expected_assertions"])
             self.assertTrue(case["forbidden_assertions"])
+
+    def test_full_interview_contract_has_no_fixed_cap_and_respects_delegation(self) -> None:
+        playbook = INTERVIEW_PLAYBOOK.read_text(encoding="utf-8")
+        skill = SKILL_MD.read_text(encoding="utf-8")
+        for required in (
+            "no total-round cap",
+            "agent-owned",
+            "answered",
+            "deferred",
+            "not applicable",
+            "End the interview from decision coverage",
+        ):
+            self.assertIn(required, playbook)
+        self.assertIn("Do not impose a total-round cap", skill)
+        self.assertIn("stop asking routine questions", skill)
 
 
 if __name__ == "__main__":

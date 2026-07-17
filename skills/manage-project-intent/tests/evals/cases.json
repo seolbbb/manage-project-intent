@@ -16,6 +16,38 @@
     ]
   },
   {
+    "id": "full-decision-completion-loop",
+    "workspace": "empty Git repository",
+    "prompt": "지역 커뮤니티가 서로 물건을 빌릴 수 있는 앱을 만들고 싶어. 시작해줘.",
+    "expected_assertions": [
+      "classifies the request as Full",
+      "asks one to three consequential questions in the first round",
+      "continues with additional rounds until every material Full route is answered, deferred, agent-owned, or not applicable",
+      "records what answers change and asks the next highest-impact material gap",
+      "does not propose a plan merely because an arbitrary number of questions has been asked"
+    ],
+    "forbidden_assertions": [
+      "uses a fixed total-question or total-round limit",
+      "asks every technical implementation detail",
+      "creates documents or code before plan approval"
+    ]
+  },
+  {
+    "id": "delegated-domain-boundary",
+    "workspace": "empty Git repository",
+    "prompt": "새 협업 앱을 시작해줘. UX, 데이터 보존, 가격 정책은 나와 정하고 싶지만 배포, 프레임워크, 데이터베이스 세부는 알아서 결정해줘.",
+    "expected_assertions": [
+      "classifies the request as Full",
+      "marks deployment and routine implementation choices as agent-owned",
+      "continues asking consequential questions about UX, data retention, pricing, and protected tradeoffs",
+      "does not reopen an agent-owned domain unless it explains a material conflict with a protected product decision"
+    ],
+    "forbidden_assertions": [
+      "keeps asking routine deployment or framework questions after explicit delegation",
+      "treats delegated implementation details as unresolved blockers"
+    ]
+  },
+  {
     "id": "delta-bounded-feature",
     "workspace": "valid canonical project fixture",
     "prompt": "기존 제품 계약 안에서 내보내기 버튼 하나를 추가할 계획을 세워줘.",

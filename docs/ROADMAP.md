@@ -53,6 +53,19 @@ Tasks:
 - [x] TASK-007: 공개 문서와 라이선스를 구현하고 `seolbbb/manage-project-intent`에 Skill을 게시한다.
 - [x] TASK-008: 네 실제 운영 문서의 영문 미러를 추가하고 양언어 README에서 직접 연결한다.
 
+### PHASE-004 — Make the decision-completion loop explicit
+
+- Status: done
+- Outcome: 반복 질문이 부차적인 단계가 아니라 사용자 의도를 추출하는 핵심 루프임을 Skill, 공개 문서와 행동 평가에서 일관되게 드러낸다.
+- Dependencies: PHASE-001 and PHASE-003 completion plus a user-confirmed need to make the interview loop more explicit.
+- Entry criteria: 실제 Full 인터뷰가 다중 라운드의 consequential 질문으로 의도와 보호 가치를 결정했다는 증거를 확인했다.
+- Exit criteria: Full 인터뷰에 총량 제한 없음, route terminal state, 명시적 위임 경계가 Skill·README·평가에 반영되고 package, unit, document validation과 설치본 동기화가 통과한다.
+- Verification evidence: Official package validation passed; 16 Skill tests and 3 installer tests passed; canonical document validation passed with errors=0 and warnings=0; README and document local-link check passed; the installed Skill passed package validation and all 16 Skill tests; source/installed manifest was UP-TO-DATE on 2026-07-18.
+
+Tasks:
+
+- [x] TASK-009: 결정 완료까지 반복 질문하는 핵심 루프와 사용자 위임 경계를 Skill·공개 문서·행동 평가에 반영한다.
+
 ### PHASE-002 — Extract independently valuable intent Skills
 
 - Status: planned

@@ -53,6 +53,19 @@ Tasks:
 - [x] TASK-007: Implement public documentation and licensing, and publish the Skill at `seolbbb/manage-project-intent`.
 - [x] TASK-008: Add English mirrors of the four live operating documents and link them directly from both READMEs.
 
+### PHASE-004 — Make the decision-completion loop explicit
+
+- Status: done
+- Outcome: Show consistently in the Skill, public documentation, and behavioral evaluations that repeated questioning is the core loop for eliciting user intent, not a secondary step.
+- Dependencies: PHASE-001 and PHASE-003 completion plus a user-confirmed need to make the interview loop more explicit.
+- Entry criteria: Evidence confirms that a real Full interview used multiple rounds of consequential questions to determine intent and protected values.
+- Exit criteria: The Skill, README, and evaluations express no total interview cap, route terminal states, and explicit delegation boundaries; package, unit, document validation, and installed-copy synchronization pass.
+- Verification evidence: Official package validation passed; 16 Skill tests and 3 installer tests passed; canonical document validation passed with errors=0 and warnings=0; README and document local-link check passed; the installed Skill passed package validation and all 16 Skill tests; source/installed manifest was UP-TO-DATE on 2026-07-18.
+
+Tasks:
+
+- [x] TASK-009: Reflect the decision-completion question loop and user delegation boundary in the Skill, public documentation, and behavioral evaluations.
+
 ### PHASE-002 — Extract independently valuable intent Skills
 
 - Status: planned

@@ -1,6 +1,6 @@
 ---
 name: manage-project-intent
-description: Manage intent-preserving software project workflows by investigating before asking, eliciting consequential user goals, values, interventions, and tradeoffs, classifying Full/Delta/Lite work, enforcing plan approval, maintaining PRODUCT_SPEC.md, ROADMAP.md, PROJECT_STATUS.md, and DECISION_LOG.md, auditing drift, revising decisions, reporting status, and resuming from one concrete next task. Use for new projects, major product or architecture changes, safety/privacy/data/commercial decisions, roadmap or status work, long-running handoffs, requests to continue from repository docs, or repositories opted in through canonical documents or the managed AGENTS marker. Also use when explicitly invoked for smaller work. Do not implicitly trigger for isolated factual questions, translations, trivial fixes, or one-off implementation that does not change the product contract, roadmap, decision history, or documented Next task.
+description: Manage intent-preserving software project workflows by investigating before asking, repeatedly eliciting consequential user goals, values, interventions, and tradeoffs until decisions are complete, classifying Full/Delta/Lite work, enforcing plan approval, maintaining PRODUCT_SPEC.md, ROADMAP.md, PROJECT_STATUS.md, and DECISION_LOG.md, auditing drift, revising decisions, reporting status, and resuming from one concrete next task. Use for new projects, major product or architecture changes, safety/privacy/data/commercial decisions, roadmap or status work, long-running handoffs, requests to continue from repository docs, or repositories opted in through canonical documents or the managed AGENTS marker. Also use when explicitly invoked for smaller work. Do not implicitly trigger for isolated factual questions, translations, trivial fixes, or one-off implementation that does not change the product contract, roadmap, decision history, or documented Next task.
 ---
 
 # Manage Project Intent
@@ -42,10 +42,11 @@ Read [references/interview-playbook.md](references/interview-playbook.md) before
 For Full work:
 
 1. Research repository truth and any current external facts that can materially affect the product.
-2. Ask one to three consequential questions per round. Ask about goals, success, scope, UX, safety, privacy, commercial constraints, failure behavior, value conflicts, and why the user intervenes; decide low-level implementation mechanics independently.
-3. Continue until the decision-complete checklist in the interview playbook passes.
-4. Present one complete `<proposed_plan>` and stop for approval. In Plan Mode, make no repository changes.
-5. Treat a later request to implement the approved plan as approval to create or update the canonical documents first. Validate them before changing product code.
+2. Run the decision-completion interview loop: ask one to three consequential questions, record what each answer changes, identify the next material gap, and repeat. Do not impose a total-round cap. Ask about goals, success, scope, UX, safety, privacy, commercial constraints, failure behavior, value conflicts, and why the user intervenes; decide low-level implementation mechanics independently.
+3. Mark every Full interview route as answered, deferred with an owner and trigger, agent-owned by explicit user delegation, or not applicable. Continue until the decision-complete checklist in the interview playbook passes.
+4. When the user delegates a domain such as deployment, framework choice, or implementation mechanics, stop asking routine questions in that domain. Reopen it only when a later cross-domain conflict would change a protected product decision, and explain that conflict.
+5. Present one complete `<proposed_plan>` and stop for approval. In Plan Mode, make no repository changes.
+6. Treat a later request to implement the approved plan as approval to create or update the canonical documents first. Validate them before changing product code.
 
 For Delta work, inspect the current product record, ask only about material gaps, and update only affected documents. For Lite work, make a concise plan and avoid permanent document churn unless the product contract, roadmap, accepted decision, or current Next task actually changes.
 

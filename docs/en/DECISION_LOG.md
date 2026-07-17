@@ -69,3 +69,18 @@
 - Reconsider when: Multiple independent Skills emerge or direct GitHub installation repeatedly obstructs adoption and updates.
 - Supersedes: None
 - Superseded by: None
+
+### DEC-005 — Make continuous intent elicitation a first-class contract
+
+- Status: accepted
+- Date: 2026-07-18
+- Initiated by: User
+- Context: A real Full interview was not a short requirements intake. It used several rounds of consequential questions to draw out user values, reasons for intervention, and the product contract. The existing Skill supported that behavior, but the README and diagram made it look like a secondary one-shot step.
+- User intent/value protected: Even when people use the same AI tools, the user intent that differentiates the outcome must be elicited through sufficient repeated questioning without wasting the interview on implementation details the user has delegated.
+- Intervention: The user identified that crucial intent elicitation was barely explained and that continuously asking many questions is the methodology's core.
+- Options considered: Strengthen README wording only; contract the question loop and stopping rule together across the Skill, public documentation, and evaluations; immediately split out a separate interview Skill.
+- Decision: Define Full interviews as a decision-completion loop with no preset total cap. Ask one to three consequential questions per round; end routes as `answered`, `deferred`, `agent-owned`, or `not applicable`; and stop routine questions in technical or deployment domains delegated by the user. Defer separate-Skill extraction until repeated independent-trigger evidence exists.
+- Consequences: The README visualization and explanation, `SKILL.md`, interview playbook, lifecycle, and behavioral evaluations must consistently show the loop and delegation boundary. The inventory is pre-approval working context, not a fifth canonical document.
+- Reconsider when: User evaluations show that the uncapped loop creates unnecessary repeated questions, or the interview stage demonstrates enough independent invocation value to merit a separate Skill.
+- Supersedes: None
+- Superseded by: None

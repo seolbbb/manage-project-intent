@@ -17,7 +17,8 @@
 - The bootstrapper provides default dry-run, no overwrite, arbitrary working languages, explicit legacy migration, and rejection of partial document sets.
 - The validator checks required phase fields, current phase, project state, completion evidence, decision links and cycles, and completed-project conflicts.
 - The synchronization tool compares repository source with the globally installed copy and requires an explicit apply after the default dry-run.
-- Seven behavioral evaluation cases specify the Full, Delta, Lite, status/audit, continue, revise, and Goldfish contracts.
+- Nine behavioral evaluation cases specify the multi-round Full interview, explicit delegation boundary, Delta, Lite, status/audit, continue, revise, and Goldfish contracts.
+- The Full interview's repeated questioning is an explicit no-total-cap decision-completion loop, with route terminal states and the user delegation boundary converged across the Skill, public README, lifecycle, and behavioral evaluations.
 - Global installation and path-free discovery of `manage-project-intent` have been verified.
 - English and Korean READMEs explain the developer intent, intended benefits and limitations, four documents, work levels, installation and use, Goldfish, and the Spec Kit boundary.
 - The MIT license and public GitHub `main` installation path are available.
@@ -25,7 +26,7 @@
 
 ## In progress
 
-- None. PHASE-003 is complete; PHASE-002 extraction work has not started.
+- None. PHASE-004 is complete; PHASE-002 extraction work has not started.
 
 ## Verification evidence
 
@@ -48,10 +49,11 @@
 - Anonymous access: `https://raw.githubusercontent.com/seolbbb/manage-project-intent/main/README.md` returned HTTP 200 without an authorization header.
 - Public hygiene: A repository-wide search found no blocked private-project name, local user path, GitHub token prefix, or OpenAI API key marker.
 - Bilingual project record: All four English mirrors preserve the canonical phase, task, and decision identifiers, state vocabulary, Next task, and verification evidence; local links resolve from both READMEs and every document pair.
+- Decision-completion loop: Official package validation passed; 16 Skill tests and 3 installer tests passed; canonical document validation reported errors=0 and warnings=0; README/document local links passed; the installed Skill passed package validation and all 16 Skill tests; source and installed manifests matched on 2026-07-18.
 
 ## Drift and gaps
 
-- None in the completed PHASE-003 scope.
+- None in the completed PHASE-004 scope.
 
 ## Blockers
 

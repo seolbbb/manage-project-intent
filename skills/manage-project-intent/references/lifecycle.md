@@ -3,7 +3,7 @@
 ## Full workflow
 
 1. **Ground**: inspect repository, instructions, documents, Git, tests, and material external facts.
-2. **Interview**: resolve consequential intent using the interview playbook.
+2. **Interview**: run the decision-completion loop from the interview playbook: ask one to three consequential questions per round, repeat without a total-round cap, and finish only when every material route has a terminal state.
 3. **Plan**: publish one decision-complete plan and wait for approval.
 4. **Materialize**: dry-run the bootstrapper, create or migrate the canonical documents, fill real content, and validate with `--strict full`.
 5. **Implement**: execute only the approved milestone or single Next task.

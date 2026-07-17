@@ -17,7 +17,8 @@
 - bootstrap은 기본 dry-run, 무덮어쓰기, 임의 작업 언어, 명시적 legacy migration, 부분 문서 집합 중단을 제공한다.
 - validator는 phase 필수 필드·current phase·project state·완료 증거·decision link/cycle·완료 상태 충돌을 검사한다.
 - 설치 도구는 원본과 전역 설치본을 비교하고 기본 dry-run과 명시적 apply를 제공한다.
-- 행동 평가 7개가 Full, Delta, Lite, status/audit, continue, revise, Goldfish 계약을 명시한다.
+- 행동 평가 9개가 다중 라운드 Full 인터뷰, 명시적 위임 경계, Delta, Lite, status/audit, continue, revise, Goldfish 계약을 명시한다.
+- Full 인터뷰의 반복 질문은 총량 제한 없는 decision-completion loop로 명시되고, route terminal state와 사용자 위임 경계가 Skill, 공개 README, lifecycle, 행동 평가에 수렴했다.
 - 새 전역 `manage-project-intent` 설치와 경로 없는 Skill 발견이 검증됐다.
 - 영문·한국어 README가 개발 의도, 기대효과와 한계, 네 문서, 등급, 설치·사용법, Goldfish와 Spec Kit 경계를 설명한다.
 - MIT 라이선스와 공개 GitHub `main` 설치 경로가 제공된다.
@@ -25,7 +26,7 @@
 
 ## In progress
 
-- None. PHASE-003 is complete; PHASE-002 extraction work has not started.
+- None. PHASE-004 is complete; PHASE-002 extraction work has not started.
 
 ## Verification evidence
 
@@ -48,10 +49,11 @@
 - Anonymous access: `https://raw.githubusercontent.com/seolbbb/manage-project-intent/main/README.md` returned HTTP 200 without an authorization header.
 - Public hygiene: repository-wide search found no blocked personal project name, local user path, GitHub token prefix, or OpenAI API key marker.
 - Bilingual project record: all four English mirrors preserve the canonical phase, task, decision identifiers, state vocabulary, Next task, and verification evidence; local links resolve from both READMEs and every document pair.
+- Decision-completion loop: official package validation passed; 16 Skill tests and 3 installer tests passed; canonical document validation reported errors=0 and warnings=0; README/document local links passed; the installed Skill passed package validation and all 16 Skill tests; source and installed manifests matched on 2026-07-18.
 
 ## Drift and gaps
 
-- None in the completed PHASE-003 scope.
+- None in the completed PHASE-004 scope.
 
 ## Blockers
 

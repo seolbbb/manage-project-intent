@@ -11,7 +11,7 @@
 ## Product intent
 
 - Why this exists: Prevent the user's implicit intent, value judgments, and reasons for direct intervention from disappearing during implementation and session transitions, even when people use the same AI tools.
-- User intent to preserve: Make consequential product decisions explicit through questions before implementation, then separate and preserve the target, current state, future sequence, and decision rationale so a later agent can continue under the same intent without chat history.
+- User intent to preserve: Make consequential product decisions explicit through rounds of questions before implementation. Repeat without a preset total-question cap until decisions are complete, end implementation domains explicitly delegated by the user as agent-owned, then separately preserve the target, current state, future sequence, and decision rationale so a later agent can continue under the same intent without chat history.
 - Priority values: User-intent preservation, evidence from the actual repository, no changes before approval, session-independent handoff, and avoidance of unnecessary documentation churn.
 - Non-negotiable tradeoffs: Do not make trivial work heavy, guess product/safety/privacy decisions to gain implementation speed, or overwrite the rationale behind earlier decisions.
 - Reconsider these choices when: Repeatable evidence shows that another system can provide equivalent or stronger guarantees for intent, rationale, current state, and handoff at a lower operating cost.
@@ -24,11 +24,12 @@
 
 - Primary user: Individual developers, product builders, and small development teams using Codex across multiple sessions and projects.
 - Problem: Intent and rationale left only in chat disappear in later sessions; target behavior and implemented behavior become mixed; and completion claims and next steps drift without verification evidence.
-- Job: Ask enough questions before starting a new project, resume an existing project from its repository and documents, and preserve the reasons behind consequential human interventions for future agents.
+- Job: Ask enough questions to complete material decisions before starting a new project, resume an existing project from its repository and documents, and preserve the reasons behind consequential human interventions for future agents.
 
 ## Goals and success criteria
 
 - Classify an ambiguous new product as Full and make no repository changes before approval.
+- For a Full interview, repeat one to three consequential questions per round without ending from an arbitrary total cap, until every material route is `answered`, `deferred`, `agent-owned`, or `not applicable`.
 - Distinguish Full, Delta, and Lite work so only the necessary questions and document updates are performed.
 - Separate the ownership of `PRODUCT_SPEC.md`, `ROADMAP.md`, `PROJECT_STATUS.md`, and `DECISION_LOG.md`.
 - Determine current behavior from code, tests, and observed runtime results; determine target behavior from the Product Spec; preserve conflicts as drift.
@@ -61,13 +62,15 @@
 ## User experience
 
 - Activate automatically only for relevant requests or project opt-in signals; do not implicitly intervene in trivial questions, translations, isolated code changes, or unrelated one-off tasks.
-- For Full work, investigate the repository, ask one to three consequential questions at a time, and change documents or code only after approval of a decision-complete plan.
+- For Full work, investigate the repository, ask one to three consequential questions at a time, record the contract changed by each answer and the next material gap, and repeat until decisions are complete. End implementation or deployment areas explicitly delegated by the user as `agent-owned`, and change documents or code only after approval of a decision-complete plan.
 - For Delta work, confirm only impacts within the existing contract; for Lite work, avoid permanent document churn.
 - Keep `status` and `audit` read-only, and use only one Next task as the scope of `continue`.
 
 ## Functional requirements
 
 - Skill metadata includes triggers for intent, values, reasons for intervention, long-running operations, decision changes, and drift audits, plus explicit non-triggers.
+- A Full interview ends from decision coverage, not a question count. A temporary decision inventory keeps every route `answered`, `deferred` with owner and reopening trigger, `agent-owned`, or `not applicable`; it is not materialized as a fifth canonical document.
+- When the user delegates technical, deployment, or routine implementation domains, stop asking routine questions in those domains and reopen them only after explaining a material conflict with a protected product decision.
 - The bootstrapper defaults to dry-run and never overwrites existing files. Applying a legacy three-document migration requires an explicit migration flag, and ambiguous partial document sets stop for audit.
 - The validator checks required documents, headings, placeholders, links, IDs, Next task, phase state, completion evidence, decision supersede relationships, and project-completion conflicts.
 - Preserve only consequential user interventions in the Decision Log; do not promote wording edits or routine implementation corrections into permanent decisions.
@@ -94,7 +97,7 @@
 ## Acceptance criteria
 
 - The official Skill package validator and all unit tests pass.
-- Behavioral cases exist for a new project, Delta, Lite, status/audit, continue, revise, Spec Kit present/absent, and Goldfish; representative fresh-agent runs pass.
+- Behavioral cases exist for a multi-round Full interview, explicit delegation boundaries, Delta, Lite, status/audit, continue, revise, Spec Kit present/absent, and Goldfish; representative fresh-agent runs pass.
 - The anonymized real-world project backtest reports the expected compatibility result without changing the target worktree.
 - The Skill installs from public `main` into a temporary Codex home and is discovered in the next fresh turn.
 - The public README, MIT license, and unauthenticated access are verified.

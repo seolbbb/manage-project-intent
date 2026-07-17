@@ -69,3 +69,18 @@
 - Reconsider when: 독립 Skill이 여러 개 생기거나 직접 GitHub 설치가 사용자 채택과 업데이트에 반복적인 장애가 된다.
 - Supersedes: None
 - Superseded by: None
+
+### DEC-005 — Make continuous intent elicitation a first-class contract
+
+- Status: accepted
+- Date: 2026-07-18
+- Initiated by: User
+- Context: 실제 Full 인터뷰는 짧은 requirements intake가 아니라 여러 라운드의 consequential 질문으로 사용자 가치·개입 이유·제품 계약을 끌어내는 과정이었다. 기존 Skill은 이 동작을 지원했지만 README와 흐름도에서는 부차적인 한 단계처럼 보였다.
+- User intent/value protected: 같은 AI 도구를 사용하더라도 결과를 구분하는 사용자의 의도는 충분한 반복 질문으로 추출해야 하며, 사용자가 맡긴 구현 세부로 인터뷰를 소모하면 안 된다.
+- Intervention: 사용자는 중요한 사용자 의도 추출이 충분히 설명되지 않았고 실제로 많은 질문을 계속하는 것이 방법론의 핵심이라고 지적했다.
+- Options considered: README 문구만 보강; 질문 루프와 종료 규칙을 Skill·공개 문서·평가에 함께 계약화; 별도 인터뷰 Skill을 즉시 분리.
+- Decision: Full 인터뷰를 총량 제한 없는 decision-completion loop로 명시한다. 매 라운드 1~3개의 consequential 질문을 묻고 route를 `answered`, `deferred`, `agent-owned`, `not applicable`으로 종료하며, 사용자가 위임한 기술·배포 영역의 routine 질문은 중단한다. 별도 Skill 분리는 반복 독립 trigger 증거가 생길 때까지 유보한다.
+- Consequences: README의 시각화와 설명, `SKILL.md`, interview playbook, lifecycle 및 행동 평가가 이 루프와 delegation boundary를 일관되게 보여야 한다. 이 inventory는 승인 전 작업 맥락이며 다섯 번째 정식 문서가 아니다.
+- Reconsider when: 실제 사용자 평가에서 무제한 루프가 불필요한 질문을 반복하거나, 인터뷰 단계가 독립 Skill로 분리될 만큼 명확한 독립 호출 가치를 보인다.
+- Supersedes: None
+- Superseded by: None
