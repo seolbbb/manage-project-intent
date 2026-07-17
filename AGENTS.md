@@ -6,5 +6,6 @@
 - Record conflicts as drift in `PROJECT_STATUS.md` instead of silently choosing one source.
 - Keep exactly one concrete Next task with acceptance and verification details in `PROJECT_STATUS.md`.
 - Preserve user interventions, protected values, rejected alternatives, and superseded decisions in `DECISION_LOG.md`.
+- Treat the Korean files directly under `docs/` as canonical. Keep the public English mirrors under `docs/en/` semantically aligned in the same change, including phase, task, decision IDs, status, and verification evidence.
 - Update affected project documents in the same task as implementation and run the `$manage-project-intent` document validator before completion.
 <!-- manage-project-intent:end -->

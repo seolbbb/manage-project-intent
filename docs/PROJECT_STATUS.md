@@ -1,5 +1,7 @@
 # Intent-Preserving Development Skills Project Status
 
+[English mirror](en/PROJECT_STATUS.md)
+
 ## Snapshot
 
 - Last verified: 2026-07-18
@@ -19,6 +21,7 @@
 - 새 전역 `manage-project-intent` 설치와 경로 없는 Skill 발견이 검증됐다.
 - 영문·한국어 README가 개발 의도, 기대효과와 한계, 네 문서, 등급, 설치·사용법, Goldfish와 Spec Kit 경계를 설명한다.
 - MIT 라이선스와 공개 GitHub `main` 설치 경로가 제공된다.
+- 네 운영 문서의 완전한 영문 미러가 `docs/en/`에 있고 양언어 README에서 실제 문서로 직접 연결된다.
 
 ## In progress
 
@@ -44,6 +47,7 @@
 - Remote install: the official `skill-installer` downloaded `skills/manage-project-intent` from public `main` into an isolated temporary destination; official package validation passed and `SKILL.md` matched the pushed source by SHA-256.
 - Anonymous access: `https://raw.githubusercontent.com/seolbbb/manage-project-intent/main/README.md` returned HTTP 200 without an authorization header.
 - Public hygiene: repository-wide search found no blocked personal project name, local user path, GitHub token prefix, or OpenAI API key marker.
+- Bilingual project record: all four English mirrors preserve the canonical phase, task, decision identifiers, state vocabulary, Next task, and verification evidence; local links resolve from both READMEs and every document pair.
 
 ## Drift and gaps
 

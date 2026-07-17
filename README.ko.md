@@ -62,6 +62,19 @@ flowchart LR
 
 현재 존재하는 동작의 최종 진실은 코드, 테스트, 실행 결과입니다. 구현과 문서가 충돌하면 편한 쪽을 정답으로 고르지 않고 드리프트로 기록합니다.
 
+## 이 저장소에 실제 적용된 문서 보기
+
+아래 문서는 설명을 위한 예제 템플릿이 아니라, 이 Skill을 만들고 유지할 때 실제로 사용하는 운영 문서입니다. 제품 의도, 현재 상태, 로드맵, 검증 증거와 사용자 결정 이력을 그대로 확인할 수 있습니다.
+
+| 문서 | 한국어 canonical 원본 | English |
+| --- | --- | --- |
+| 제품 계약 | [PRODUCT_SPEC.md](docs/PRODUCT_SPEC.md) | [PRODUCT_SPEC.md](docs/en/PRODUCT_SPEC.md) |
+| 현재 상태와 단 하나의 Next task | [PROJECT_STATUS.md](docs/PROJECT_STATUS.md) | [PROJECT_STATUS.md](docs/en/PROJECT_STATUS.md) |
+| 개발 순서 | [ROADMAP.md](docs/ROADMAP.md) | [ROADMAP.md](docs/en/ROADMAP.md) |
+| 사용자 개입과 결정 근거 | [DECISION_LOG.md](docs/DECISION_LOG.md) | [DECISION_LOG.md](docs/en/DECISION_LOG.md) |
+
+이 저장소에서는 한국어 문서를 작업 원본으로 사용하고, 공개 사용자를 위한 영문 미러가 동일한 ID·상태·결정·검증 증거를 유지합니다.
+
 ### 작업 등급
 
 | 등급 | 적용 대상 | 동작 |

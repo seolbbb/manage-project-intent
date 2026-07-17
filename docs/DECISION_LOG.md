@@ -1,5 +1,7 @@
 # Intent-Preserving Development Skills Decision Log
 
+[English mirror](en/DECISION_LOG.md)
+
 ## Status vocabulary
 
 - `proposed`: recorded but not yet accepted.

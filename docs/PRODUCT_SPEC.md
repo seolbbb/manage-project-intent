@@ -1,5 +1,7 @@
 # Intent-Preserving Development Skills Product Spec
 
+[English mirror](en/PRODUCT_SPEC.md)
+
 ## Document control
 
 - Status: accepted
@@ -34,6 +36,7 @@
 - fresh agent가 의도, 보호 결정, 현재 상태, 다음 작업과 완료 증거를 복원한다.
 - 단위 테스트와 행동 평가가 승인된 수용 시나리오를 반복 검증한다.
 - 공개 저장소에서 공식 Skill installer로 설치 가능한 원본을 제공한다.
+- 공개 사용자가 실제 프로젝트 운영 기록을 읽을 수 있도록 네 canonical 문서의 영문 미러를 제공한다.
 - 효용을 보장된 생산성 향상으로 과장하지 않고 문서 유지 비용과 적용 경계를 함께 설명한다.
 
 ## Scope
@@ -41,7 +44,7 @@
 ### In scope
 
 - GitHub 공개 저장소와 전역 설치본을 분리하고 신규 설치와 기여자용 로컬 동기화 경로를 제공한다.
-- MIT 라이선스와 영문·한국어 README를 제공한다.
+- MIT 라이선스, 영문·한국어 README와 `docs/en/` 영문 문서 미러를 제공한다.
 - 인터뷰, 문서 계약, lifecycle, Spec Kit 선택적 adapter, 템플릿을 유지·강화한다.
 - bootstrap의 신규·legacy·부분 문서 상태와 임의 작업 언어를 안전하게 처리한다.
 - validator가 로드맵·상태·결정의 구조 및 의미 충돌을 검사한다.
@@ -70,6 +73,7 @@
 - 중요한 사용자 개입만 Decision Log에 보존하며 사소한 문구·구현 수정은 영구 결정으로 승격하지 않는다.
 - Spec Kit이 있으면 선택된 한 작업의 실행 계층으로만 사용하고 결과를 네 정식 문서에 수렴한다.
 - 공식 Skill installer는 공개 `main` 경로에서 신규 설치를 제공한다. 저장소의 기여자용 동기화 도구는 원본과 설치 대상의 차이를 먼저 보여주고 명시적 적용을 요구한다.
+- `docs/`의 한국어 네 문서를 canonical 원본으로 유지하고 `docs/en/`의 영문 미러를 같은 변경에서 갱신한다. 두 언어는 phase, task, decision ID, 상태와 검증 증거를 동일하게 유지한다.
 
 ## Safety, privacy, and data
 
@@ -85,6 +89,7 @@
 - runtime 스크립트는 Python 표준 라이브러리만 사용하고 Windows 경로와 UTF-8 문서를 지원한다.
 - 명령은 실패 이유와 구체적인 issue code를 제공하고 JSON 출력을 유지한다.
 - 설치·bootstrap은 반복 실행해도 같은 결과를 내며 승인되지 않은 삭제를 하지 않는다.
+- 영문 미러는 별도의 제품 상태나 결정 원본으로 사용하지 않으며 canonical 문서와 구조적으로 비교할 수 있어야 한다.
 
 ## Acceptance criteria
 
@@ -93,6 +98,7 @@
 - 익명화된 real-world project backtest가 예상된 호환 결과를 보고하며 대상 작업 트리를 변경하지 않는다.
 - 공개 `main` 경로에서 임시 Codex 홈으로 설치되고 다음 fresh turn에서 발견된다.
 - 공개 README, MIT 라이선스와 비로그인 접근이 검증된다.
+- README에서 실제 네 운영 문서의 한국어 원본과 영문 미러에 직접 접근할 수 있고, 두 언어의 ID·상태·Next task가 일치한다.
 - 공개 저장소에서 특정 개인 프로젝트명과 개인 경로 검색 결과가 0건이다.
 - 원본 저장소에는 정확히 하나의 Next task와 최종 검증 증거가 남는다.
 

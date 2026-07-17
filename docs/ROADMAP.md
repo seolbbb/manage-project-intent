@@ -1,5 +1,7 @@
 # Intent-Preserving Development Skills Roadmap
 
+[English mirror](en/ROADMAP.md)
+
 ## Document control
 
 - Status: active
@@ -44,11 +46,12 @@ Tasks:
 - Dependencies: PHASE-001 completion and the approved public-upload plan.
 - Entry criteria: 공개 저장소 이름, MIT 라이선스와 영문·한국어 문서 범위가 승인됐다.
 - Exit criteria: 로컬 검사가 통과하고 공개 페이지와 `main` 경로 원격 설치가 검증된다.
-- Verification evidence: English and Korean READMEs passed fresh-agent first-use review; MIT and public GitHub `main` are available; official remote installation, official package validation, source hash comparison, anonymous README access, and public hygiene checks passed on 2026-07-18.
+- Verification evidence: English and Korean READMEs passed fresh-agent first-use review; MIT and public GitHub `main` are available; official remote installation, official package validation, source hash comparison, anonymous README access, public hygiene checks, and English canonical-document mirror parity passed on 2026-07-18.
 
 Tasks:
 
 - [x] TASK-007: 공개 문서와 라이선스를 구현하고 `seolbbb/manage-project-intent`에 Skill을 게시한다.
+- [x] TASK-008: 네 실제 운영 문서의 영문 미러를 추가하고 양언어 README에서 직접 연결한다.
 
 ### PHASE-002 — Extract independently valuable intent Skills
 

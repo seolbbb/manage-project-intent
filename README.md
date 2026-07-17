@@ -62,6 +62,19 @@ flowchart LR
 
 Code, tests, and observed runtime behavior remain the final truth for what exists now. If implementation and documents disagree, the Skill records drift rather than choosing a convenient answer.
 
+## See the workflow applied to this repository
+
+These are the live documents used to build and maintain this Skill—not polished example templates. They expose the actual product intent, current status, roadmap, verification evidence, and decision history behind the repository.
+
+| Document | English | Korean canonical source |
+| --- | --- | --- |
+| Product contract | [PRODUCT_SPEC.md](docs/en/PRODUCT_SPEC.md) | [PRODUCT_SPEC.md](docs/PRODUCT_SPEC.md) |
+| Current status and one Next task | [PROJECT_STATUS.md](docs/en/PROJECT_STATUS.md) | [PROJECT_STATUS.md](docs/PROJECT_STATUS.md) |
+| Delivery sequence | [ROADMAP.md](docs/en/ROADMAP.md) | [ROADMAP.md](docs/ROADMAP.md) |
+| User interventions and rationale | [DECISION_LOG.md](docs/en/DECISION_LOG.md) | [DECISION_LOG.md](docs/DECISION_LOG.md) |
+
+The Korean files are the working source of truth for this repository. The English mirrors preserve the same identifiers, states, decisions, and evidence for public readers.
+
 ### Work levels
 
 | Level | Use it for | Behavior |
